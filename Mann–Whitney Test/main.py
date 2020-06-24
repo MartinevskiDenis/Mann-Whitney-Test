@@ -4,7 +4,7 @@ from scipy.stats import mannwhitneyu
 
 def test_nd_nd(loc1: float, scale1: float, loc2: float, scale2: float, cnt: int, alpha: float):
     selection1 = np.random.normal(loc1, scale1, cnt)
-    selection2 = np.random.normal(loc1, scale2, cnt)
+    selection2 = np.random.normal(loc2, scale2, cnt)
     print("Первая выборка (" + str(loc1) + ", " + str(scale1) + ")")
     print(selection1)
     print("Вторая выборка (" + str(loc2) + ", " + str(scale2) + ")")
@@ -54,10 +54,10 @@ def main():
     test_nd_nd(0, 1, 0, 2, 30, 0.05)
     print()
     print()
-    test_nd_ud(0, 1, -1, 1, 10, 0.05)
+    test_nd_ud(0, 1, -1, 1, 30, 0.05)
     print()
     print()
-    test_ud_ud(-2, 2, -2.5, 2.5, 10, 0.05)
+    test_ud_ud(-2, 2, -2.5, 2.5, 30, 0.05)
 
 
 if __name__ == "__main__":
